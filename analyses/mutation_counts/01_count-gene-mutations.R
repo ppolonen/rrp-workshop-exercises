@@ -100,6 +100,10 @@ nonsyn_class <- c(
   "Translation_Start_Site"
 )
 
+# stopifnot(
+#   "The specified MAF file does not exist!" = file.exists(opts$maf),
+# )
+
 # Main processing code -----------------------------------
 
 # Read input MAF file

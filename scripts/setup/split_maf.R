@@ -41,7 +41,7 @@ filter_write_maf <- function(histology, sample_df, maf_df, outdir, suffix = ".ma
 # end Functions
 
 
-# Set up options
+# Set up option
 option_list <- list(
   make_option(
     opt_str = c("--maf", "-m"),
@@ -77,6 +77,10 @@ opts <- parse_args(OptionParser(option_list = option_list))
 if(!dir.exists(opts$outdir)){
   dir.create(opts$outdir)
 }
+
+stopifnot(
+  "The specified MAF file does not exist!" = file.exists(opts$maf),
+)
 
 # read and filter sample info
 samples_df <- readr::read_tsv(opts$sample_info) |>
